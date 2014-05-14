@@ -1,0 +1,15 @@
+---
+- id: 1
+  first_name: Eric
+  last_name: Nelson
+  email: e@trmnl.us
+  password: 12345678
+  password_confirmation: 12345678
+  admin: true
+- id: 2
+  first_name: Luser
+  last_name: Jones
+  email: luser@trmnl.us
+  password: 12345678
+  password_confirmation: 12345678
+  admin: false
