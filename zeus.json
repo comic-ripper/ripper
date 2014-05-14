@@ -11,8 +11,7 @@
           "server": ["s"],
           "generate": ["g"],
           "destroy": ["d"],
-          "dbconsole": [],
-          "sidekiq": ["sk"]
+          "dbconsole": []
 
         },
         "test_environment": {

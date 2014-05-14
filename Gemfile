@@ -33,6 +33,7 @@ gem 'rails_admin'
 gem 'paper_trail'
 gem 'devise'
 gem 'sidekiq'
+gem 'sidekiq-middleware'
 gem 'sinatra', '>= 1.3.0', require: nil # Sidekiq admin
 
 gem 'whenever', require: false
