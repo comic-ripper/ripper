@@ -16,3 +16,5 @@
 /tmp
 
 .env
+
+/vendor/assets/bower_components

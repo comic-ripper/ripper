@@ -54,7 +54,8 @@ gem 'factory_girl_rails', group: :test
 gem 'timecop', group: :test
 
 # Development Gems
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'better_errors', groups: [:development, :test]
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'jazz_hands', groups: [:development, :test]
 gem 'activerecord-import'
 gem 'colored'
