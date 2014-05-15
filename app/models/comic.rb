@@ -5,6 +5,8 @@ class Comic < ActiveRecord::Base
 
   serialize :parser_data
 
+  validates :title, presence: true
+
   check def index
     puts "I've been checked"
   end

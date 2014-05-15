@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140515151756) do
   add_index "chapters", ["comic_id"], name: "index_chapters_on_comic_id", using: :btree
 
   create_table "comics", force: true do |t|
-    t.string   "title",       default: "", null: false
+    t.string   "title",       null: false
     t.text     "parser_data"
     t.datetime "created_at"
     t.datetime "updated_at"
