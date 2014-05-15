@@ -9,20 +9,17 @@ module Checkable
     end
 
     def delay_check
-      # delay(unique: true).check
       Checkable::Worker.perform_async self.class, id
     end
   end
 
   module ClassMethods
     def check(method)
-      puts "Check!"
-      @checked ||= []
-      @checked << method
+      checked << method
     end
 
     def checked
-      @checked
+      @checked ||= []
     end
   end
 
@@ -30,7 +27,6 @@ module Checkable
     include Sidekiq::Worker
 
     sidekiq_options unique: true, expiration: 1.day
-
 
     def perform klass, id
       klass.constantize.find(id).check

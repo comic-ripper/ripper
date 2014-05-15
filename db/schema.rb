@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514194335) do
+ActiveRecord::Schema.define(version: 20140515134533) do
+
+  create_table "chapters", force: true do |t|
+    t.integer  "comic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "chapters", ["comic_id"], name: "index_chapters_on_comic_id", using: :btree
 
   create_table "comics", force: true do |t|
-    t.datetime "scheduled_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

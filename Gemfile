@@ -53,6 +53,7 @@ gem 'rspec-rails', '~> 3.0.0.beta', groups: [:development, :test]
 gem 'rspec', '~> 3.0.0.beta2', groups: [:development, :test]
 gem 'factory_girl_rails', group: :test
 gem 'timecop', group: :test
+gem 'simplecov', :require => false, :group => :test
 
 # Development Gems
 gem 'better_errors', groups: [:development, :test]

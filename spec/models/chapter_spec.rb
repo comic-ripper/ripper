@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Comic do
+describe Chapter do
   it_behaves_like "Checkable"
   
 end
