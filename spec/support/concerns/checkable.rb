@@ -9,6 +9,12 @@ shared_examples_for "Checkable" do
   end
 
   describe "#check" do
+    before do
+      model.check def checkable.test_checkable_method
+        return true
+      end
+    end
+
     it "will call checked methods" do
       model.checked.each do |method|
         allow(checkable).to receive(method)

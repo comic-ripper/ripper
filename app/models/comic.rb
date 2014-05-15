@@ -1,6 +1,10 @@
 class Comic < ActiveRecord::Base
   include Checkable
 
+  has_many :chapters
+
+  serialize :parser_data
+
   check def index
     puts "I've been checked"
   end

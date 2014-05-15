@@ -3,24 +3,24 @@ Reading progress is stored per user?
 Will there be multiple users?
 
 ### Comic
- * has_many Chapters
- * Stores URL, title, and parser, and parser parameters
-  * URL
-  * Title
-  * General progress info
+ * has_many Chapters P1
+ * Stores URL, title, and parser, and parser parameters P1
+  * URL -> Parser info P1
+  * Title P1
+  * General progress info P2
     * First chapter to grab
     * Limit the number of stored chapters
 
 ### Chapter
-  * belongs_to Comic
-  * has_many Pages
-  * chapter number
+  * belongs_to Comic P1
+  * has_many Pages P1
+  * chapter number P1
     * Could contain letters, so this will have to be a string.
     * Being a string can make things weird
-  * volume number
+  * volume number P1
     * Must be a number
     * is optional
-  * Ripper metadata
+  * Ripper metadata P1
     * URL of chapter index
     * The specific ripper, etc...
 

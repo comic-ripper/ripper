@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515134533) do
+ActiveRecord::Schema.define(version: 20140515151756) do
 
   create_table "chapters", force: true do |t|
     t.integer  "comic_id"
+    t.string   "number"
+    t.integer  "volume"
+    t.text     "parser_data"
+    t.datetime "read_at"
+    t.integer  "apparent_size"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -22,9 +27,26 @@ ActiveRecord::Schema.define(version: 20140515134533) do
   add_index "chapters", ["comic_id"], name: "index_chapters_on_comic_id", using: :btree
 
   create_table "comics", force: true do |t|
+    t.string   "title",                   default: "", null: false
+    t.integer  "parser_configuration_id"
+    t.text     "parser_data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "comics", ["parser_configuration_id"], name: "index_comics_on_parser_configuration_id", using: :btree
+
+  create_table "pages", force: true do |t|
+    t.integer  "chapter_id"
+    t.integer  "number",      null: false
+    t.text     "parser_data"
+    t.string   "file_path"
+    t.integer  "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["chapter_id"], name: "index_pages_on_chapter_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
