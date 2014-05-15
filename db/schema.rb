@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140515151756) do
     t.integer  "comic_id"
     t.string   "number"
     t.integer  "volume"
+    t.string   "title"
     t.text     "parser_data"
     t.datetime "read_at"
     t.integer  "apparent_size"

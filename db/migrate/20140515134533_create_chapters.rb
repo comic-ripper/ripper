@@ -5,13 +5,15 @@ class CreateChapters < ActiveRecord::Migration
 
       t.string :number, index: true
 
-      t.integer :volume, null: true
+      t.integer :volume
+
+      t.string :title
 
       t.text :parser_data
 
-      t.timestamp :read_at, null: true
+      t.timestamp :read_at
 
-      t.integer :apparent_size, null: true
+      t.integer :apparent_size
 
       t.timestamps
     end
