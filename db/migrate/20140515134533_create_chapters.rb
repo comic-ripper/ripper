@@ -9,12 +9,13 @@ class CreateChapters < ActiveRecord::Migration
 
       t.string :title
 
-      t.text :parser_data
+      t.text :parser
 
       t.timestamp :read_at
 
       t.integer :apparent_size
 
+      t.timestamp :checked_at
       t.timestamps
     end
   end

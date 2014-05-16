@@ -18,9 +18,10 @@ ActiveRecord::Schema.define(version: 20140515151756) do
     t.string   "number"
     t.integer  "volume"
     t.string   "title"
-    t.text     "parser_data"
+    t.text     "parser"
     t.datetime "read_at"
     t.integer  "apparent_size"
+    t.datetime "checked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,18 +29,20 @@ ActiveRecord::Schema.define(version: 20140515151756) do
   add_index "chapters", ["comic_id"], name: "index_chapters_on_comic_id", using: :btree
 
   create_table "comics", force: true do |t|
-    t.string   "title",       null: false
-    t.text     "parser_data"
+    t.string   "title",      null: false
+    t.text     "parser"
+    t.datetime "checked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "pages", force: true do |t|
     t.integer  "chapter_id"
-    t.integer  "number",      null: false
-    t.text     "parser_data"
+    t.integer  "number",     null: false
+    t.text     "parser"
     t.string   "file_path"
-    t.integer  "size"
+    t.integer  "file_size"
+    t.datetime "checked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

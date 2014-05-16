@@ -5,11 +5,12 @@ class CreatePages < ActiveRecord::Migration
 
       t.integer :number, null: false
 
-      t.text :parser_data
+      t.text :parser
 
       t.string :file_path
-      t.integer :size
+      t.integer :file_size
 
+      t.timestamp :checked_at
       t.timestamps
     end
   end

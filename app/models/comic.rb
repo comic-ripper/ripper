@@ -3,15 +3,23 @@ class Comic < ActiveRecord::Base
 
   has_many :chapters
 
-  serialize :parser_data
+  serialize :parser, JSON
 
   validates :title, presence: true
 
-  check def index
-    puts "I've been checked"
-  end
+  scope :unchecked, lambda { where("checked_at IS NULL OR checked_at < :next_check", next_check: 1.hour.ago) }
 
-  check def ive_been_shot
-    puts "#{id} has been shot"
+  check def update_chapters
+    parser.chapters.map do |chapter|
+      unless chapters.where(number: chapter.number).any?
+        Chapter.create(
+          comic: self,
+          number: chapter.number,
+          volume: chapter.volume,
+          title:  chapter.title,
+          parser: chapter
+        )
+      end
+    end
   end
 end

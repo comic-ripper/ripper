@@ -6,6 +6,7 @@ module Checkable
       self.class.checked.map do |method_to_check|
         send(method_to_check)
       end
+      update checked_at: Time.now
     end
 
     def delay_check

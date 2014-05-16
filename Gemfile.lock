@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:nelseric/batoto_ripper.git
-  revision: 69ed19ae120f882cce574ede2d261cf9135ac5f8
+  revision: 575c43f318d479e2485a155c68f098df091389c4
   branch: master
   specs:
     batoto_ripper (0.1.0)
