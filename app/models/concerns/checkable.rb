@@ -12,6 +12,9 @@ module Checkable
     def delay_check
       Checkable::Worker.perform_async self.class, id
     end
+
+    scope :unchecked, lambda { where("checked_at IS NULL") }
+    scope :not_recently_checked, lambda { where("checked_at IS NULL OR checked_at < :next_check", next_check: 1.hour.ago) }
   end
 
   module ClassMethods

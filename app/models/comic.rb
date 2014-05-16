@@ -7,8 +7,6 @@ class Comic < ActiveRecord::Base
 
   validates :title, presence: true
 
-  scope :unchecked, lambda { where("checked_at IS NULL OR checked_at < :next_check", next_check: 1.hour.ago) }
-
   check def update_chapters
     parser.chapters.map do |chapter|
       unless chapters.where(number: chapter.number).any?
