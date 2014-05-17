@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20140515151756) do
     t.integer  "chapter_id"
     t.integer  "number",     null: false
     t.text     "parser"
-    t.string   "file_path"
+    t.string   "image"
     t.integer  "file_size"
     t.datetime "checked_at"
     t.datetime "created_at"

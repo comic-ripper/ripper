@@ -6,7 +6,20 @@ class Chapter < ActiveRecord::Base
 
   serialize :parser, JSON
 
-  check def update_pages
+  def number_for_file
+    number.rjust(6, "0")
+  end
+
+  def filename
+    "[#{id}]#{comic.title}_#{number_for_file}"
+  end
+
+  def complete?
+    pages.all?(&:checked?)
+
+  end
+
+  on_check def update_pages
     parser.pages.map do |page|
       unless pages.where(number: page.number).any?
         Page.create(

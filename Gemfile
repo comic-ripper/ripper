@@ -40,6 +40,8 @@ gem 'whenever', require: false
 
 # Building
 gem 'seven_zip_ruby'
+
+gem 'carrierwave'
 gem 'simple_form'
 
 # Comic parsers

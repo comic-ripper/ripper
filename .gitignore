@@ -17,5 +17,6 @@
 /coverage
 
 .env
-
+/public/uploads
+/public/pages
 /vendor/assets/bower_components

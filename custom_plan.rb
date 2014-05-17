@@ -9,6 +9,8 @@ class CustomPlan < Zeus::Rails
     # require all ruby files
     Dir["#{Rails.root}/app/**/*.rb"].each { |f| load f }
 
+    Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+    
     RSpec::Core::Runner.disable_autorun!
     exit RSpec::Core::Runner.run(["spec"] + argv)
   end

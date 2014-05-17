@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:nelseric/batoto_ripper.git
-  revision: 575c43f318d479e2485a155c68f098df091389c4
+  revision: 9046fe66f5045cd680ec84e83f415700adb2e33d
   branch: master
   specs:
     batoto_ripper (0.1.0)
@@ -49,6 +49,11 @@ GEM
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     chronic (0.10.2)
@@ -314,6 +319,7 @@ DEPENDENCIES
   batoto_ripper!
   better_errors
   bootstrap-sass
+  carrierwave
   coffee-rails (~> 4.0.0)
   colored
   devise

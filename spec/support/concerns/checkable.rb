@@ -5,24 +5,24 @@ shared_examples_for "Checkable" do
   subject(:checkable) { model.new id: 1 }
 
   it "has a list of checked methods" do
-    expect(model.checked).to be_an Array
+    expect(model.check_hooks).to be_an Array
   end
 
   describe "#check" do
     before do
-      model.check def checkable.test_checkable_method
+      model.on_check def checkable.test_checkable_method
         return true
       end
     end
 
     it "will call checked methods" do
-      model.checked.each do |method|
+      model.check_hooks.each do |method|
         allow(checkable).to receive(method)
       end
 
       checkable.check
 
-      model.checked.each do |method|
+      model.check_hooks.each do |method|
         expect(checkable).to have_received(method)
       end
     end

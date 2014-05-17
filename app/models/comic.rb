@@ -7,7 +7,7 @@ class Comic < ActiveRecord::Base
 
   validates :title, presence: true
 
-  check def update_chapters
+  on_check def update_chapters
     parser.chapters.map do |chapter|
       unless chapters.where(number: chapter.number).any?
         Chapter.create(
