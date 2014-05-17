@@ -22,6 +22,13 @@ class Chapter < ActiveRecord::Base
     checked? && pages.all?(&:checked?)
   end
 
+  def display_name
+    display = ""
+    display += "Vol.#{volume} " if volume
+    display += "Ch.#{number}"
+    display += ": #{title}"
+  end
+
   on_check def update_pages
     parser.pages.map do |page|
       unless pages.where(number: page.number).any?

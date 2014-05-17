@@ -1,0 +1,21 @@
+<div class="page-header">
+  <%= link_to comics_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <h1><%= @comic.title %></h1>
+</div>
+
+<div class="table-responsive">
+  <h2>Chapters </h2>
+  <table class="table">
+    <tr>
+      <th>Chapter</th>
+      <th>Read</th>
+    </tr>
+    <%= content_tag_for(:tr, @comic.chapters) do |chapter| %>
+      <td><%= chapter.display_name %> </td>
+      <td><%= link_to "Read", chapter %> </td>
+    <% end %>
+  </table>
+</div>
