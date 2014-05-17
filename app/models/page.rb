@@ -17,6 +17,7 @@ class Page < ActiveRecord::Base
       self.remote_image_url = parser.image_url
       save
     end
+    update file_size: image.size
   end
 
   on_uncheck :remove_image!

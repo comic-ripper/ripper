@@ -15,6 +15,8 @@ class CreateChapters < ActiveRecord::Migration
 
       t.integer :apparent_size
 
+      t.string :archive
+
       t.timestamp :checked_at
       t.timestamps
     end

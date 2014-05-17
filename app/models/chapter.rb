@@ -4,6 +4,10 @@ class Chapter < ActiveRecord::Base
   belongs_to :comic
   has_many :pages
 
+  mount_uploader :archive, ChapterArchiveUploader
+  scope :unbuilt, lambda { where("archive IS NULL  ") }
+  scope :built, lambda { where("archive IS NOT NULL") }
+
   serialize :parser, JSON
 
   def number_for_file
@@ -15,8 +19,7 @@ class Chapter < ActiveRecord::Base
   end
 
   def complete?
-    pages.all?(&:checked?)
-
+    checked? && pages.all?(&:checked?)
   end
 
   on_check def update_pages
@@ -28,6 +31,29 @@ class Chapter < ActiveRecord::Base
           parser: page
         )
       end
+    end
+  end
+
+  ARCHIVE_EXT = "7z"
+  def build
+    if complete?
+      temp = Tempfile.new filename + "." + ARCHIVE_EXT
+      begin
+        SevenZipRuby::Writer.open(temp) do |szr|
+          szr.method = "LZMA2"
+          pages.each do |page|
+            szr.add_file page.image.file.path, as: page.image.file.filename
+          end
+        end
+
+        self.archive.store! temp
+        self.save
+      ensure
+        temp.close
+        temp.unlink
+      end
+    else
+      fail "Chapter not complete"
     end
   end
 end

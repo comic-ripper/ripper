@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140515151756) do
     t.text     "parser"
     t.datetime "read_at"
     t.integer  "apparent_size"
+    t.string   "archive"
     t.datetime "checked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
