@@ -20,6 +20,12 @@ class ComicsController < ApplicationController
   # POST /comics.json
   def create
     @comic = Comic.new(comic_params)
+    if params[:comic][:parser_data][:type] == "batoto"
+      @comic.parser = BatotoRipper::Comic.new(
+        url: params[:comic][:parser_data][:url],
+        language: params[:comic][:parser_data][:language]
+      )
+    end
 
     respond_to do |format|
       if @comic.save

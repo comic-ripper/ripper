@@ -29,6 +29,10 @@ class Chapter < ActiveRecord::Base
     display += ": #{title}"
   end
 
+  def update_size
+    update apparent_size: pages.map(&:file_size).sum
+  end
+
   on_check def update_pages
     parser.pages.map do |page|
       unless pages.where(number: page.number).any?

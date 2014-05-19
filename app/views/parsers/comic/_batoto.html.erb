@@ -1,0 +1,8 @@
+<% if f.object.parser.is_a? BatotoRipper::Comic %>
+  <%= f.input 'parser_data][url', input_html: {value: @comic.parser.url} %>
+  <%= f.input 'parser_data][language', input_html: {value: @comic.parser.language} %>
+<% else %>
+  <%= f.input 'parser_data][url', label: "URL", input_html: {value: ''} %>
+  <%= f.input 'parser_data][language', label: "Language", input_html: {value: 'lang_English'} %>
+<% end %>
+<%= f.input 'parser_data][type', as: :hidden, input_html: {value: 'batoto'} %>

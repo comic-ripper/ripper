@@ -18,6 +18,7 @@ class Page < ActiveRecord::Base
       save
     end
     update file_size: image.size
+    chapter.update_size
   end
 
   on_uncheck :remove_image!
