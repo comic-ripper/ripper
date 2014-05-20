@@ -23,12 +23,21 @@ module Checkable
     end
 
     def delay_check
-      Checkable::Worker.perform_async self.class, id
+      self.class.perform_async id
     end
 
     scope :unchecked, lambda { where("checked_at IS NULL") }
     scope :checked, lambda { where("checked_at IS NOT NULL") }
     scope :not_recently_checked, lambda { where("checked_at IS NULL OR checked_at < :next_check", next_check: 1.hour.ago) }
+
+
+    include Sidekiq::Worker
+
+    sidekiq_options unique: true, expiration: 1.day, queue: self.to_s
+
+    def perform id
+      self.class.find(id).check
+    end
   end
 
   module ClassMethods
@@ -46,16 +55,6 @@ module Checkable
 
     def uncheck_hooks
       @uncheck_hooks ||= []
-    end
-  end
-
-  class Worker
-    include Sidekiq::Worker
-
-    sidekiq_options unique: true, expiration: 1.day
-
-    def perform klass, id
-      klass.constantize.find(id).check
     end
   end
 end

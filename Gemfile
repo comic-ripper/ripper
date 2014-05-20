@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 gem 'bootstrap-generators', '~> 3.1.1'
 gem 'psych', '~>2.0.0'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

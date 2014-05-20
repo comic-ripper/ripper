@@ -10,6 +10,20 @@ class Chapter < ActiveRecord::Base
 
   serialize :parser, JSON
 
+  def next
+    chapters = comic.chapters.order(number: :asc).to_a
+    chapter_index = chapters.index(self)
+
+    chapters[chapter_index + 1]
+  end
+
+  def prev
+    chapters = comic.chapters.order(number: :asc).to_a
+    chapter_index = chapters.index(self)
+
+    chapters[chapter_index - 1] if chapter_index > 0
+  end
+
   def number_for_file
     number.rjust(6, "0")
   end

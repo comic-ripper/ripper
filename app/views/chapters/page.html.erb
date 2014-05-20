@@ -1,1 +1,22 @@
-<%= link_to image_tag(@page.image_url), @next_page %>
+<%= javascript_include_tag :chapter %>
+<%= page_entries_info @pages %>
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to_prev_chapter "Previous Chapter", @chapter, class: "btn btn-default"  %>
+  </div>
+  <div class="col-md-8">
+    <div class="text-center">
+      <%= paginate @pages %>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <%= link_to_next_chapter "Next Chapter", @chapter, class: "btn btn-default"  %>
+  </div>
+</div>
+<%=
+page_image = image_tag(@pages[0].image_url, class: "img-responsive center-block")
+
+link_to_next_page @pages, page_image do
+  link_to_next_chapter page_image, @chapter, rel: "next"
+end
+%>

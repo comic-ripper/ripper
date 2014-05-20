@@ -8,5 +8,7 @@ production:
   :concurrency: 5
 :queues:
   - [critical, 20]
+  - [Comic, 10]
   - [default, 5]
-  - [page, 1]
+  - [Chapter, 5]
+  - [Page, 1]

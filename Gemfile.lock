@@ -135,6 +135,9 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kaminari-bootstrap (3.0.1)
+      kaminari (>= 0.13.0)
+      rails
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -331,6 +334,7 @@ DEPENDENCIES
   jazz_hands
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari-bootstrap (~> 3.0.1)
   mysql2
   paper_trail
   psych (~> 2.0.0)

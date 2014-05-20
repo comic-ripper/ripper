@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :comics, only: [:index, :new, :show, :create] do
   end
 
-  resources :chapters, only: [:show]
+  resources :chapters, only: [:show] do
+    get ':id/:page', :action => :show, :on => :collection
+  end
 
   devise_for :users
   root controller: :comics, action: :index
