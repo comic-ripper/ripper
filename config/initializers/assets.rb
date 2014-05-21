@@ -1,2 +1,2 @@
 
-Rails.application.config.assets.precompile += %w( chapter.js )
+Rails.application.config.assets.precompile += %w( keyboard_navigation.js )
