@@ -16,4 +16,5 @@ test:
 
 production:
   <<: *default
+  host: ripper
   database: ripper_production
