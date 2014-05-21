@@ -51,6 +51,10 @@ gem 'batoto_ripper',
      git: 'git@github.com:nelseric/batoto_ripper.git',
      branch: "master"
 
+
+gem 'dotenv-rails'
+gem 'jazz_hands'
+
 # Testing
 
 gem 'rspec-rails', '~> 3.0.0.beta', groups: [:development, :test]
@@ -61,7 +65,5 @@ gem 'simplecov', :require => false, :group => :test
 
 # Development Gems
 gem 'better_errors', groups: [:development, :test]
-gem 'dotenv-rails', groups: [:development, :test]
-gem 'jazz_hands', groups: [:development, :test]
 gem 'activerecord-import'
 gem 'colored'
