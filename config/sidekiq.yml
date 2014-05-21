@@ -1,7 +1,7 @@
 ---
 :concurrency: 5
 :pidfile: tmp/pids/sidekiq.pid
-# :logfile: log/sidekiq.log
+:logfile: log/sidekiq.log
 staging:
   :concurrency: 5
 production:
