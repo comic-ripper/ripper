@@ -11,7 +11,7 @@
   <table class="table table-striped table-hover">
     <tr>
       <th>Chapter</th>
-      <th>Complete? </th>
+      <th></th>
       <th>Page Size</th>
       <th>Archive Size</th>
       <th></th>
@@ -19,11 +19,11 @@
     <%= content_tag_for(:tr, @comic.chapters.order(number: :asc)) do |chapter| %>
       <td><%= chapter.display_name %> </td>
       <td><%= if chapter.complete?
-                tag(:span, class: "glyphicon glyphicon-ok")
+                fa_icon "check-square-o 2x text-success", text: "Complete"
               else
-                tag(:span, class: "glyphicon glyphicon-remove")
+                fa_icon "check-square 2x", text: "Incomplete"
               end %></td>
-      <td><%= number_to_human_size chapter.pages.map(&:file_size).sum %></td>
+      <td><%= number_to_human_size chapter.pages.map(&:file_size).compact.sum %></td>
       <td><%= number_to_human_size chapter.archive.size %></td>
       <td><%= link_to "Read", chapter, class: "btn btn-info pull-right" %> </td>
     <% end %>

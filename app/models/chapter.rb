@@ -44,7 +44,7 @@ class Chapter < ActiveRecord::Base
   end
 
   def update_size
-    update apparent_size: pages.map(&:file_size).sum
+    update apparent_size: pages.map(&:file_size).compact.sum
   end
 
   on_check def update_pages
@@ -57,6 +57,10 @@ class Chapter < ActiveRecord::Base
         )
       end
     end
+  end
+
+  def delay_build
+    delay(queue: "Build", unique: true).build
   end
 
   ARCHIVE_EXT = "7z"

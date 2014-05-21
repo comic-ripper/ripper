@@ -7,8 +7,9 @@ staging:
 production:
   :concurrency: 5
 :queues:
-  - [critical, 20]
-  - [Comic, 10]
-  - [default, 5]
-  - [Chapter, 5]
-  - [Page, 1]
+  - [critical, 30]
+  - [Comic, 15]
+  - [default, 15]
+  - [Chapter, 10]
+  - [Page, 5]
+  - [Build, 1]

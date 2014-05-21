@@ -38,6 +38,15 @@ module Checkable
     def perform id
       self.class.find(id).check
     end
+
+    def self.lock(id)
+      "locks:unique:#{self.to_s}:#{id}"
+    end
+
+    def self.unlock!(id)
+      lock = self.lock(id)
+      Sidekiq.redis { |conn| conn.del(lock) }
+    end
   end
 
   module ClassMethods
