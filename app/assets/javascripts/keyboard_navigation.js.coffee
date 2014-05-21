@@ -1,4 +1,3 @@
-
 $("body").keypress (event) ->
   if event.key == "Right" or event.key == "d"
     Turbolinks.visit $("a[rel=next]").attr("href")

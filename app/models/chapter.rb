@@ -25,7 +25,9 @@ class Chapter < ActiveRecord::Base
   end
 
   def number_for_file
-    number.rjust(6, "0")
+    number_part, partial_part = number.match(/(\d+)(.*)/)[1..2]
+
+    number_part.rjust(6, "0") + partial_part.to_s
   end
 
   def filename

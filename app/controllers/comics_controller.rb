@@ -4,11 +4,11 @@ class ComicsController < ApplicationController
   # GET /comics
   # GET /comics.json
   def index
-    @comics = Comic.all
+    @comics = Comic.order(:title).page(params[:page]).per(12)
   end
 
   def show
-
+    @chapters = Kaminari.paginate_array(@comic.chapters.sort_by(&:number_for_file)).page(params[:page]).per(12)
   end
 
   # GET /comics/new
