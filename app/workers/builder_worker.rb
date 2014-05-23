@@ -1,4 +1,4 @@
-class BuilderdWorker
+class BuilderWorker
   include Sidekiq::Worker
 
   sidekiq_options queue: "Build", unique: :all, expiration: 1.day
