@@ -62,7 +62,7 @@ class Chapter < ActiveRecord::Base
   end
 
   def delay_build
-    delay(queue: "Build", unique: true).build
+    BuilderWorker.perform_async(self.id)
   end
 
   ARCHIVE_EXT = "7z"
