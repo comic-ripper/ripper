@@ -1,7 +1,7 @@
 class BuilderdWorker
   include Sidekiq::Worker
 
-  sidekiq_options unique: :all, expiration: 1.day
+  sidekiq_options queue: "Build", unique: :all, expiration: 1.day
 
   def perform chapter_id
     Chapter.find(id).build
