@@ -7,6 +7,8 @@ class Page < ActiveRecord::Base
 
   mount_uploader :image, PageImageUploader
 
+  has_paper_trail
+
 
   def file_number
     number.to_s.rjust 6, "0"

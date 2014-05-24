@@ -4,6 +4,8 @@ class Chapter < ActiveRecord::Base
   belongs_to :comic
   has_many :pages
 
+  has_paper_trail
+
   mount_uploader :archive, ChapterArchiveUploader
   scope :unbuilt, lambda { where("archive IS NULL  ") }
   scope :built, lambda { where("archive IS NOT NULL") }
