@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root controller: :comics, action: :index
 
 
   authenticate :user do
+    root controller: :comics, action: :index
+    
     resources :comics, only: [:index, :new, :show, :create] do
       get 'p/:page', action: :index, on: :collection
     end
