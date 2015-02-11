@@ -7,6 +7,8 @@ class Page < ActiveRecord::Base
 
   mount_uploader :image, PageImageUploader
 
+  has_paper_trail
+
 
   def file_number
     number.to_s.rjust 6, "0"
@@ -18,6 +20,7 @@ class Page < ActiveRecord::Base
       save
     end
     update file_size: image.size
+    chapter.update_size
   end
 
   on_uncheck :remove_image!

@@ -1,0 +1,13 @@
+<%= simple_form_for(@comic) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= render partial: "parsers/comic/batoto", locals: {f: f} %>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,12 +1,15 @@
 ---
 :concurrency: 5
 :pidfile: tmp/pids/sidekiq.pid
-# :logfile: log/sidekiq.log
+:logfile: log/sidekiq.log
 staging:
   :concurrency: 5
 production:
   :concurrency: 5
 :queues:
-  - [critical, 20]
-  - [default, 5]
-  - [page, 1]
+  - [critical, 30]
+  - [Comic, 15]
+  - [default, 15]
+  - [Chapter, 10]
+  - [Page, 5]
+  - [Build, 1]

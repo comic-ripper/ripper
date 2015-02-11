@@ -30,16 +30,15 @@ shared_examples_for "Checkable" do
 
   describe "#delay_check" do
     it "will trigger a perform_async on the worker inner class" do
-      allow(model::Worker).to receive(:perform_async).with(model, checkable.id)
+      allow(model).to receive(:perform_async).with(checkable.id)
 
       checkable.delay_check
 
-      expect(model::Worker).to have_received(:perform_async)
+      expect(model).to have_received(:perform_async)
     end
   end
 
-  describe "::Worker#perform" do
-    subject(:worker) { model::Worker.new }
+  describe "#perform" do
 
     before do
       allow(model).to receive(:find).with(checkable.id).and_return checkable
@@ -48,7 +47,7 @@ shared_examples_for "Checkable" do
     it "checks the object it looks up" do
       allow(checkable).to receive(:check)
 
-      worker.perform model.to_s, checkable.id
+      checkable.class.new.perform checkable.id
 
       expect(checkable).to have_received(:check)
     end

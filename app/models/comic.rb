@@ -7,9 +7,11 @@ class Comic < ActiveRecord::Base
 
   validates :title, presence: true
 
+  has_paper_trail ignore: [:updated_at, :checked_at]
+
   on_check def update_chapters
     parser.chapters.map do |chapter|
-      unless chapters.where(number: chapter.number).any?
+      unless chapters.select{|c| c.parser.to_json == chapter.to_json}.any?
         Chapter.create(
           comic: self,
           number: chapter.number,
