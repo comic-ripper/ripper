@@ -12,7 +12,7 @@ shared_examples_for "Checkable" do
     before do
       model.on_check(
         def checkable.test_checkable_method
-          return true
+          true
         end
       )
     end

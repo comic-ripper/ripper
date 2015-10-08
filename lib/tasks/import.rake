@@ -1,15 +1,15 @@
 namespace :import do
-  task :urls => :environment do
+  task urls: :environment do
     pages = JSON.load(Rails.root + "db" + "import" + "pages.json")
 
     pages.each do |page|
       Sidekiq.redis do |con|
-        con.set "import_url:#{page["url"]}", page["image_url"]
+        con.set "import_url:#{page['url']}", page["image_url"]
       end
     end
   end
 
-  task :comics => :environment do
+  task comics: :environment do
     comics = JSON.load File.read(Rails.root + 'db' + 'import' + 'comics.json')
     comics.map! do |comic|
       Comic.new(
@@ -24,7 +24,7 @@ namespace :import do
     Comic.import comics
   end
 
-  task :pages => :environment do
+  task pages: :environment do
     Sidekiq.redis do |con|
       Page.where("created_at = updated_at").each do |page|
         url_key = "import_url:#{page.parser.url}"

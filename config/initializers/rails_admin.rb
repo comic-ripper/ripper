@@ -18,8 +18,8 @@ RailsAdmin.config do |config|
   config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   config.navigation_static_links = {
-      'Reader' => '/',
-      'Sidekiq' => '/sidekiq'
+    'Reader' => '/',
+    'Sidekiq' => '/sidekiq'
 
   }
 

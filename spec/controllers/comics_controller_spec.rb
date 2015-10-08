@@ -20,7 +20,7 @@ require 'spec_helper'
 
 describe ComicsController do
   pending "No!"
-<<COMMENT
+  <<COMMENT
   # This should return the minimal set of attributes required to create a valid
   # Comic. As you add validations to Comic, be sure to
   # adjust the attributes here as well.

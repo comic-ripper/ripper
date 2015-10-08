@@ -1,7 +1,7 @@
 require 'zeus/rails'
 
 class CustomPlan < Zeus::Rails
-  def spec(argv=ARGV)
+  def spec(argv = ARGV)
     require 'simplecov'
     SimpleCov.start 'rails'
 
@@ -9,7 +9,7 @@ class CustomPlan < Zeus::Rails
     Dir["#{Rails.root}/app/**/*.rb"].each { |f| load f }
 
     Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
-    
+
     RSpec::Core::Runner.disable_autorun!
     exit RSpec::Core::Runner.run(["spec"] + argv)
   end

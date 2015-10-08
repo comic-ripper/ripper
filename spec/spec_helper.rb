@@ -7,7 +7,7 @@ def zeus_running?
   File.exist? '.zeus.sock'
 end
 
-if !zeus_running?
+unless zeus_running?
   require 'simplecov'
   SimpleCov.start
 

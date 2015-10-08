@@ -14,7 +14,7 @@ class Page < ActiveRecord::Base
   end
 
   on_check def download_image
-    unless self.image.file && self.image.file.exists?
+    unless image.file && image.file.exists?
       self.remote_image_url = parser.image_url
       save
     end

@@ -7,8 +7,8 @@ class Chapter < ActiveRecord::Base
   has_paper_trail
 
   mount_uploader :archive, ChapterArchiveUploader
-  scope :unbuilt, lambda { where("archive IS NULL  ") }
-  scope :built, lambda { where("archive IS NOT NULL") }
+  scope :unbuilt, -> { where("archive IS NULL  ") }
+  scope :built, -> { where("archive IS NOT NULL") }
 
   serialize :parser, JSON
 
@@ -64,7 +64,7 @@ class Chapter < ActiveRecord::Base
   end
 
   def delay_build
-    BuilderWorker.perform_async(self.id)
+    BuilderWorker.perform_async(id)
   end
 
   ARCHIVE_EXT = "7z"
@@ -79,8 +79,8 @@ class Chapter < ActiveRecord::Base
           end
         end
 
-        self.archive.store! temp
-        self.save
+        archive.store! temp
+        save
       ensure
         temp.close
         temp.unlink

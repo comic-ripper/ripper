@@ -40,13 +40,13 @@ class ComicsController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comic
-      @comic = Comic.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_comic
+    @comic = Comic.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def comic_params
-      params.require(:comic).permit(:title)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def comic_params
+    params.require(:comic).permit(:title)
+  end
 end
