@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 class ChapterArchiveUploader < CarrierWave::Uploader::Base
-
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -47,5 +46,4 @@ class ChapterArchiveUploader < CarrierWave::Uploader::Base
   def filename
     "#{model.filename}.#{Chapter::ARCHIVE_EXT}" if original_filename
   end
-
 end

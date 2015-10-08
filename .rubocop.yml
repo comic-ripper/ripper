@@ -1,0 +1,9 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Excludes:
+    - db/schema.rb
+    - 'bin/rails'
+    - 'bin/rake'
+    - 'bin/rspec'
+    - 'bin/setup'

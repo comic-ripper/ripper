@@ -1,6 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Comic do
+RSpec.describe Comic do
   it_behaves_like "Checkable"
-  
 end

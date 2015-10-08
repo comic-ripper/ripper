@@ -4,7 +4,7 @@ class CreateComics < ActiveRecord::Migration
       t.string :title, null: false
 
       t.text :parser
-      
+
       t.timestamp :checked_at
       t.timestamps
     end

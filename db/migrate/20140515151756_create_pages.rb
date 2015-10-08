@@ -8,7 +8,7 @@ class CreatePages < ActiveRecord::Migration
       t.text :parser
 
       t.string :image
-      
+
       t.integer :file_size
 
       t.timestamp :checked_at

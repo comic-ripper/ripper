@@ -9,13 +9,12 @@ class Page < ActiveRecord::Base
 
   has_paper_trail
 
-
   def file_number
     number.to_s.rjust 6, "0"
   end
 
-  on_check def get_image
-    unless self.image.file && self.image.file.exists?
+  on_check def download_image
+    unless image.file && image.file.exists?
       self.remote_image_url = parser.image_url
       save
     end
@@ -24,5 +23,4 @@ class Page < ActiveRecord::Base
   end
 
   on_uncheck :remove_image!
-
 end

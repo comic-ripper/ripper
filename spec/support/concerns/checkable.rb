@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-shared_examples_for "Checkable" do
+RSpec.shared_examples_for "Checkable" do
   let(:model) { described_class } # the class that includes the concern
   subject(:checkable) { model.new id: 1 }
 
@@ -10,9 +10,11 @@ shared_examples_for "Checkable" do
 
   describe "#check" do
     before do
-      model.on_check def checkable.test_checkable_method
-        return true
-      end
+      model.on_check(
+        def checkable.test_checkable_method
+          true
+        end
+      )
     end
 
     it "will call checked methods" do
@@ -39,7 +41,6 @@ shared_examples_for "Checkable" do
   end
 
   describe "#perform" do
-
     before do
       allow(model).to receive(:find).with(checkable.id).and_return checkable
     end

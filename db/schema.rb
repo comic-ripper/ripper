@@ -13,7 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20140515151756) do
 
-  create_table "chapters", force: true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "chapters", force: :cascade do |t|
     t.integer  "comic_id"
     t.string   "number"
     t.integer  "volume"
@@ -28,8 +31,9 @@ ActiveRecord::Schema.define(version: 20140515151756) do
   end
 
   add_index "chapters", ["comic_id"], name: "index_chapters_on_comic_id", using: :btree
+  add_index "chapters", ["number"], name: "index_chapters_on_number", using: :btree
 
-  create_table "comics", force: true do |t|
+  create_table "comics", force: :cascade do |t|
     t.string   "title",      null: false
     t.text     "parser"
     t.datetime "checked_at"
@@ -37,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140515151756) do
     t.datetime "updated_at"
   end
 
-  create_table "pages", force: true do |t|
+  create_table "pages", force: :cascade do |t|
     t.integer  "chapter_id"
     t.integer  "number",     null: false
     t.text     "parser"
@@ -50,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140515151756) do
 
   add_index "pages", ["chapter_id"], name: "index_pages_on_chapter_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "first_name"
@@ -71,7 +75,7 @@ ActiveRecord::Schema.define(version: 20140515151756) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "versions", force: true do |t|
+  create_table "versions", force: :cascade do |t|
     t.string   "item_type",  null: false
     t.integer  "item_id",    null: false
     t.string   "event",      null: false

@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 class PageImageUploader < CarrierWave::Uploader::Base
-
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -47,5 +46,4 @@ class PageImageUploader < CarrierWave::Uploader::Base
   def filename
     "#{model.file_number}.#{file.extension}" if original_filename
   end
-
 end

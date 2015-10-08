@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
-# Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'rails', '4.2.4'
+
+gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,12 +23,15 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'spring', group: :development
+gem 'spring-commands-rspec', group: :development
 
-gem 'thin'
+gem 'rubocop', require: false, group: :development
+
+gem 'puma'
 
 # Administration
 gem 'rails_admin'
@@ -48,20 +51,19 @@ gem 'simple_form'
 
 # Comic parsers
 gem 'batoto_ripper',
-     git: 'git@github.com:nelseric/batoto_ripper.git',
-     branch: "master"
-
+    git: 'git@github.com:nelseric/batoto_ripper.git',
+    branch: "master"
 
 gem 'dotenv-rails'
-gem 'jazz_hands'
+gem 'jazz_fingers'
 
 # Testing
 
-gem 'rspec-rails', '~> 3.0.0.beta', groups: [:development, :test]
-gem 'rspec', '~> 3.0.0.beta2', groups: [:development, :test]
+gem 'rspec-rails', '~> 3.3.0', groups: [:development, :test]
+gem 'rspec', '~> 3.3.0.beta2', groups: [:development, :test]
 gem 'factory_girl_rails', group: :test
 gem 'timecop', group: :test
-gem 'simplecov', :require => false, :group => :test
+gem 'simplecov', require: false, group: :test
 
 # Development Gems
 gem 'better_errors', groups: [:development, :test]
