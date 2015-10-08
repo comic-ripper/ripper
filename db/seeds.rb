@@ -8,6 +8,7 @@
 
 comics = YAML.load_file Rails.root + 'db' + 'seeds' + 'comics.yml'
 comics.map! do |comic|
+  binding.pry
   Comic.new comic
 end
 Comic.import comics

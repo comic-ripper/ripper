@@ -1,14 +1,20 @@
-/*
-*= require_self
-*/
+// Example using 'Cerulean' bootswatch
 
-@import "bootstrap/variables";
-@import "journal/variables";
-@import "bootstrap/bootstrap";
-@import "journal/bootswatch";
+//Import bootstrap-sprockets
+@import "bootstrap-sprockets";
+
+// Import cerulean variables
+@import "bootswatch/journal/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// Bootstrap body padding for fixed navbar
+body { padding-top: 60px; }
+
+// And finally bootswatch style itself
+@import "bootswatch/journal/bootswatch";
+
 @import "font-awesome";
 
 
-input {
-  color: black;
-}
