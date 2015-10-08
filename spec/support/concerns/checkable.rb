@@ -41,7 +41,6 @@ shared_examples_for "Checkable" do
   end
 
   describe "#perform" do
-
     before do
       allow(model).to receive(:find).with(checkable.id).and_return checkable
     end

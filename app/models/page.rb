@@ -13,7 +13,7 @@ class Page < ActiveRecord::Base
     number.to_s.rjust 6, "0"
   end
 
-  on_check def get_image
+  on_check def download_image
     unless self.image.file && self.image.file.exists?
       self.remote_image_url = parser.image_url
       save
@@ -23,5 +23,4 @@ class Page < ActiveRecord::Base
   end
 
   on_uncheck :remove_image!
-
 end

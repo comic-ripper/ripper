@@ -28,61 +28,10 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 18
 
-# Offense count: 1
-Style/AccessorMethodName:
-  Exclude:
-    - 'app/models/page.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle, SupportedLastArgumentHashStyles.
-Style/AlignHash:
-  Exclude:
-    - 'config/initializers/simple_form.rb'
-    - 'config/initializers/simple_form_bootstrap.rb'
-
 # Offense count: 24
 # Configuration parameters: Exclude.
 Style/Documentation:
   Enabled: false
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/EmptyLinesAroundAccessModifier:
-  Exclude:
-    - 'app/controllers/chapters_controller.rb'
-    - 'app/controllers/comics_controller.rb'
-
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundBlockBody:
-  Exclude:
-    - 'config/initializers/rails_admin.rb'
-    - 'config/initializers/simple_form_bootstrap.rb'
-    - 'config/routes.rb'
-    - 'db/schema.rb'
-    - 'spec/support/concerns/checkable.rb'
-
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundClassBody:
-  Exclude:
-    - 'app/models/page.rb'
-    - 'app/uploaders/chapter_archive_uploader.rb'
-    - 'app/uploaders/page_image_uploader.rb'
-    - 'custom_plan.rb'
-
-# Offense count: 10
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment.
-Style/ExtraSpacing:
-  Exclude:
-    - 'Gemfile'
-    - 'bin/setup'
-    - 'config.ru'
-    - 'db/schema.rb'
 
 # Offense count: 10
 # Cop supports --auto-correct.

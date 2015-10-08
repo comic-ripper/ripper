@@ -1,7 +1,6 @@
 require 'zeus/rails'
 
 class CustomPlan < Zeus::Rails
-
   def spec(argv=ARGV)
     require 'simplecov'
     SimpleCov.start 'rails'
