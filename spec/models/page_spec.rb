@@ -1,5 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Page do
+RSpec.describe Page do
   it_behaves_like "Checkable"
 end

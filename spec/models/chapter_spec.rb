@@ -1,5 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Chapter do
+RSpec.describe Chapter do
   it_behaves_like "Checkable"
 end
