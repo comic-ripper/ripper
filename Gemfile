@@ -40,7 +40,6 @@ gem 'puma'
 
 # Administration
 gem 'rails_admin'
-gem 'paper_trail'
 gem 'devise'
 gem 'sidekiq'
 gem 'sidekiq-middleware'
@@ -71,6 +70,6 @@ gem 'timecop', group: :test
 gem 'simplecov', require: false, group: :test
 
 # Development Gems
-gem 'better_errors', groups: [:development, :test]
+# gem 'better_errors', groups: [:development, :test]
 gem 'activerecord-import'
 gem 'colored'

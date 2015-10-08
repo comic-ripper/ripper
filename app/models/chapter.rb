@@ -4,13 +4,11 @@ class Chapter < ActiveRecord::Base
   belongs_to :comic
   has_many :pages
 
-  has_paper_trail
-
   mount_uploader :archive, ChapterArchiveUploader
   scope :unbuilt, -> { where("archive IS NULL  ") }
   scope :built, -> { where("archive IS NOT NULL") }
 
-  serialize :parser, JSON
+  serialize :parser
 
   def next
     chapters = comic.chapters.order(number: :asc).to_a

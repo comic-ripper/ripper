@@ -3,11 +3,9 @@ class Comic < ActiveRecord::Base
 
   has_many :chapters
 
-  serialize :parser, JSON
+  serialize :parser
 
   validates :title, presence: true
-
-  has_paper_trail ignore: [:updated_at, :checked_at]
 
   on_check def update_chapters
     parser.chapters.map do |chapter|

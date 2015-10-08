@@ -3,11 +3,9 @@ class Page < ActiveRecord::Base
 
   belongs_to :chapter
 
-  serialize :parser, JSON
+  serialize :parser
 
   mount_uploader :image, PageImageUploader
-
-  has_paper_trail
 
   def file_number
     number.to_s.rjust 6, "0"
