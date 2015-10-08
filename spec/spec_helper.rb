@@ -4,7 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 
 def zeus_running?
-  File.exists? '.zeus.sock'
+  File.exist? '.zeus.sock'
 end
 
 if !zeus_running?
@@ -48,7 +48,6 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
-
 
   config.include Devise::TestHelpers, type: :controller
 end

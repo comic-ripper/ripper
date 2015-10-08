@@ -30,7 +30,6 @@ module Checkable
     scope :checked, lambda { where("checked_at IS NOT NULL") }
     scope :not_recently_checked, lambda { where("checked_at IS NULL OR checked_at < :next_check", next_check: 1.hour.ago) }
 
-
     include Sidekiq::Worker
 
     sidekiq_options unique: true, expiration: 1.day, queue: self.to_s
@@ -40,7 +39,7 @@ module Checkable
     end
 
     def self.lock(id)
-      "locks:unique:#{self.to_s}:#{id}"
+      "locks:unique:#{self}:#{id}"
     end
 
     def self.unlock!(id)

@@ -16,4 +16,4 @@ users = YAML.load_file Rails.root + 'db' + 'seeds' + 'users.yml'
 users.map! do |user|
   User.new user
 end
-users.map &:save!
+users.map(&:save!)

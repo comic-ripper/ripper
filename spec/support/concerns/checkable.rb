@@ -10,9 +10,11 @@ shared_examples_for "Checkable" do
 
   describe "#check" do
     before do
-      model.on_check def checkable.test_checkable_method
-        return true
-      end
+      model.on_check(
+        def checkable.test_checkable_method
+          return true
+        end
+      )
     end
 
     it "will call checked methods" do

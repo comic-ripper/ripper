@@ -12,13 +12,11 @@ RailsAdmin.config do |config|
     redirect_to main_app.root_path unless warden.user.admin?
   end
 
-
   ## == Cancan ==
   # config.authorize_with :cancan
 
   ## == PaperTrail ==
   config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
-
 
   config.navigation_static_links = {
       'Reader' => '/',

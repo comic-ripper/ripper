@@ -44,7 +44,7 @@ class Chapter < ActiveRecord::Base
     display = ""
     display += "Vol.#{volume} " if volume
     display += "Ch.#{number}"
-    display += ": #{title}"
+    display + ": #{title}"
   end
 
   def update_size

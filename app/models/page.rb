@@ -9,7 +9,6 @@ class Page < ActiveRecord::Base
 
   has_paper_trail
 
-
   def file_number
     number.to_s.rjust 6, "0"
   end
