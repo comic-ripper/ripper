@@ -1,10 +1,8 @@
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   pool: 25
-  username: <%= ENV['RIPPER_DATABASE_USERNAME'] %>
-  password: <%= ENV['RIPPER_DATABASE_PASSWORD'] %>
-
+  
 development:
   <<: *default
   database: ripper_development
