@@ -58,6 +58,10 @@ gem 'batoto_ripper',
     git: 'git@github.com:nelseric/batoto_ripper.git',
     branch: "master"
 
+gem 'imgur_ripper',
+    git: 'git@github.com:nelseric/imgur_ripper.git',
+    branch: "master"
+
 gem 'dotenv-rails'
 gem 'jazz_fingers'
 

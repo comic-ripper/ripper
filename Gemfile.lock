@@ -1,9 +1,18 @@
 GIT
   remote: git@github.com:nelseric/batoto_ripper.git
-  revision: bbdf6b881ed5f416aab16d7011f82d5bdfdc0ae9
+  revision: be1208d9aba33a63e19db5c7174c001ba46ce107
   branch: master
   specs:
     batoto_ripper (0.1.2)
+      nokogiri
+      rest-client
+
+GIT
+  remote: git@github.com:nelseric/imgur_ripper.git
+  revision: 7ffa49e97b8bf9f24bfc495e0467b985f1376359
+  branch: master
+  specs:
+    imgur_ripper (0.0.1)
       nokogiri
       rest-client
 
@@ -371,6 +380,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  imgur_ripper!
   jazz_fingers
   jbuilder (~> 2.0)
   jquery-rails

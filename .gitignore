@@ -18,6 +18,8 @@
 /coverage
 /spec/examples.txt
 
+*.sublime-workspace
+
 .env
 /public/uploads
 /public/pages
