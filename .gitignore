@@ -17,6 +17,7 @@
 /tmp
 /coverage
 /spec/examples.txt
+/doc
 
 *.sublime-workspace
 

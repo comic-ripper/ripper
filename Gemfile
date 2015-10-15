@@ -29,14 +29,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring', group: :development
-gem 'spring-commands-rspec', group: :development
-
-gem 'rubocop', require: false, group: :development
 
 gem 'puma'
 gem 'rails_12factor'
@@ -44,10 +36,10 @@ gem 'rails_12factor'
 # Administration
 gem 'rails_admin'
 gem 'devise'
+
 gem 'sidekiq'
 gem 'sidekiq-middleware'
 gem 'sinatra', '>= 1.3.0', require: nil # Sidekiq admin
-
 gem 'whenever', require: false
 
 # Building
@@ -70,12 +62,26 @@ gem 'jazz_fingers'
 
 # Testing
 
-gem 'rspec-rails', '~> 3.3.0', groups: [:development, :test]
-gem 'rspec', '~> 3.3.0.beta2', groups: [:development, :test]
-gem 'factory_girl_rails', group: :test
-gem 'timecop', group: :test
-gem 'simplecov', require: false, group: :test
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', '~> 0.4.0', group: :doc
 
+group :development do
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'spring-commands-rspec'
+
+  gem 'rubocop', require: false
+end
+group :development, :test do
+  gem 'rspec', '~> 3.3.0'
+  gem 'rspec-rails', '~> 3.3.0'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'timecop'
+  gem 'simplecov', require: false
+end
 # Development Gems
 # gem 'better_errors', groups: [:development, :test]
 gem 'activerecord-import'

@@ -186,7 +186,7 @@ GEM
       ast (>= 1.1, < 3.0)
     pg (0.18.3)
     powerpack (0.1.1)
-    pry (0.10.2)
+    pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
@@ -296,7 +296,7 @@ GEM
       ruby-progressbar (~> 1.4)
     ruby-progressbar (1.7.5)
     safe_yaml (1.0.4)
-    sass (3.4.18)
+    sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
@@ -307,8 +307,8 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     seven_zip_ruby (1.2.4)
-    sidekiq (3.5.0)
-      celluloid (~> 0.17.0)
+    sidekiq (3.5.1)
+      celluloid (~> 0.17.2)
       connection_pool (~> 2.2, >= 2.2.0)
       json (~> 1.0)
       redis (~> 3.2, >= 3.2.1)
@@ -396,7 +396,7 @@ DEPENDENCIES
   rails (= 4.2.4)
   rails_12factor
   rails_admin
-  rspec (~> 3.3.0.beta2)
+  rspec (~> 3.3.0)
   rspec-rails (~> 3.3.0)
   rubocop
   sass-rails (~> 5.0.0)
