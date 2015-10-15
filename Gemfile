@@ -55,11 +55,11 @@ gem 'simple_form'
 
 # Comic parsers
 gem 'batoto_ripper',
-    git: 'git@github.com:nelseric/batoto_ripper.git',
+    github: 'nelseric/batoto_ripper',
     branch: "master"
 
 gem 'imgur_ripper',
-    git: 'git@github.com:nelseric/imgur_ripper.git',
+    github: 'nelseric/imgur_ripper',
     branch: "master"
 
 gem 'dotenv-rails'

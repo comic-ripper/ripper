@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:nelseric/batoto_ripper.git
+  remote: git://github.com/nelseric/batoto_ripper.git
   revision: be1208d9aba33a63e19db5c7174c001ba46ce107
   branch: master
   specs:
@@ -8,7 +8,7 @@ GIT
       rest-client
 
 GIT
-  remote: git@github.com:nelseric/imgur_ripper.git
+  remote: git://github.com/nelseric/imgur_ripper.git
   revision: c42113f7f2b4486dfc08f260bd00b1daa5a33887
   branch: master
   specs:
