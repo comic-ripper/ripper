@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git@github.com:nelseric/imgur_ripper.git
-  revision: 7ffa49e97b8bf9f24bfc495e0467b985f1376359
+  revision: c42113f7f2b4486dfc08f260bd00b1daa5a33887
   branch: master
   specs:
     imgur_ripper (0.0.1)
