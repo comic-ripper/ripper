@@ -49,11 +49,11 @@ gem 'carrierwave'
 gem 'simple_form'
 
 # Comic parsers
-gem 'batoto_ripper',
+gem 'batoto_ripper', "~> 0.1.3",
     github: 'nelseric/batoto_ripper',
     branch: "master"
 
-gem 'imgur_ripper',
+gem 'imgur_ripper', "~> 0.0.2",
     github: 'nelseric/imgur_ripper',
     branch: "master"
 
