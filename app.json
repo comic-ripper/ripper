@@ -17,6 +17,24 @@
     },
     "SECRET_KEY_BASE":{
       "required":true
+    },
+    "IMGUR_CLIENT_ID":{
+      "required":true
+    },
+    "IMGUR_CLIENT_SECRET":{
+      "required":true
+    },
+    "AWS_REGION":{
+      "required":true
+    },
+    "AWS_ACCESS_KEY_ID":{
+      "required":true
+    },
+    "AWS_SECRET_ACCESS_KEY":{
+      "required":true
+    },
+    "S3_BUCKET_NAME":{
+      "required":true
     }
   },
   "addons":[
