@@ -44,6 +44,7 @@ gem 'whenever', require: false
 
 # Building
 gem 'seven_zip_ruby'
+gem 'rubyzip'
 
 gem 'carrierwave'
 gem 'carrierwave-aws'

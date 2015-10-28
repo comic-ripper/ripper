@@ -1,4 +1,6 @@
 require 'unsafe_json'
+require 'zip'
+
 class Chapter < ActiveRecord::Base
   include Checkable
 
@@ -66,10 +68,38 @@ class Chapter < ActiveRecord::Base
     BuilderWorker.perform_async(id)
   end
 
-  ARCHIVE_EXT = "7z"
+  ARCHIVE_EXT="zip"
+
   def build
+    build_zip
+  end
+
+
+  def build_zip
     if complete?
-      temp = Tempfile.new filename + "." + ARCHIVE_EXT
+      temp = Tempfile.new filename + "." + "zip"
+      begin
+        Zip::File.open(temp.path, Zip::File::CREATE) do |zipfile|
+          pages.each do |page|
+            page.image.cache!
+            zipfile.add page.image.file.filename, page.image.file.path
+          end
+        end
+
+        archive.store! temp
+        save
+      ensure
+        temp.close
+        temp.unlink
+      end
+    else
+      fail "Chapter not complete"
+    end
+  end
+
+  def build_7z
+    if complete?
+      temp = Tempfile.new filename + "." + "7z"
       begin
         SevenZipRuby::Writer.open(temp) do |szr|
           szr.method = "LZMA2"
