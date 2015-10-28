@@ -17,8 +17,4 @@ CarrierWave.configure do |config|
     secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
     region:            ENV['AWS_REGION'] # Required
   }
-
-  # Optional: Signing of download urls, e.g. for serving private
-  # content through CloudFront.
-  config.aws_signer = -> (unsigned_url, options) { Aws::CF::Signer.sign_url unsigned_url, options }
 end
