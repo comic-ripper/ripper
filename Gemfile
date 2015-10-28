@@ -46,6 +46,8 @@ gem 'whenever', require: false
 gem 'seven_zip_ruby'
 
 gem 'carrierwave'
+gem 'carrierwave-aws'
+
 gem 'simple_form'
 
 # Comic parsers

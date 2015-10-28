@@ -65,6 +65,12 @@ GEM
       execjs
       json
     awesome_print (1.6.1)
+    aws-sdk (2.1.32)
+      aws-sdk-resources (= 2.1.32)
+    aws-sdk-core (2.1.32)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.1.32)
+      aws-sdk-core (= 2.1.32)
     bcrypt (3.1.10)
     bootstrap-generators (3.3.4)
       railties (>= 3.1.0)
@@ -81,6 +87,9 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    carrierwave-aws (1.0.0)
+      aws-sdk (~> 2.0)
+      carrierwave (~> 0.7)
     celluloid (0.17.2)
       celluloid-essentials
       celluloid-extras
@@ -156,6 +165,7 @@ GEM
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jmespath (1.1.3)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -397,6 +407,7 @@ DEPENDENCIES
   bootstrap-sass
   bootswatch-rails
   carrierwave
+  carrierwave-aws
   coffee-rails (~> 4.1.0)
   colored
   devise
