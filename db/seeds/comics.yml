@@ -1,13 +1,5 @@
 ---
-- title: Kekkon Yubiwa Monogatari
+- title: Magika no Kenshi to Shoukan Maou
   parser: !ruby/object:BatotoRipper::Comic
-    url: http://www.batoto.net/comic/_/comics/kekkon-yubiwa-monogatari-r11521
-    language: lang_English
-- title: Billionaire_Girl
-  parser: !ruby/object:BatotoRipper::Comic
-    language: lang_English
-    url: http://www.batoto.net/comic/_/comics/billionaire-girl-r99
-- title: Fuuka
-  parser: !ruby/object:BatotoRipper::Comic
-    url: http://www.batoto.net/comic/_/comics/fuuka-r11026
+    url: http://bato.to/comic/_/comics/magika-no-kenshi-to-shoukan-maou-r10504
     language: lang_English

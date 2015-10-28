@@ -1,9 +1,11 @@
+require 'unsafe_json'
+
 class Page < ActiveRecord::Base
   include Checkable
 
   belongs_to :chapter
 
-  serialize :parser
+  serialize :parser, UnsafeJSON
 
   mount_uploader :image, PageImageUploader
 

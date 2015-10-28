@@ -1,9 +1,10 @@
+require 'unsafe_json'
+
 class Comic < ActiveRecord::Base
   include Checkable
 
   has_many :chapters
-
-  serialize :parser
+  serialize :parser, UnsafeJSON
 
   validates :title, presence: true
 
