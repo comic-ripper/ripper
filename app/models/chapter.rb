@@ -1,3 +1,4 @@
+require 'unsafe_json'
 class Chapter < ActiveRecord::Base
   include Checkable
 
@@ -8,7 +9,7 @@ class Chapter < ActiveRecord::Base
   scope :unbuilt, -> { where("archive IS NULL  ") }
   scope :built, -> { where("archive IS NOT NULL") }
 
-  serialize :parser
+  serialize :parser, UnsafeJSON
 
   def next
     chapters = comic.chapters.order(number: :asc).to_a

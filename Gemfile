@@ -49,11 +49,11 @@ gem 'carrierwave'
 gem 'simple_form'
 
 # Comic parsers
-gem 'batoto_ripper', "~> 0.1.3",
+gem 'batoto_ripper', "~> 0.2.0",
     github: 'nelseric/batoto_ripper',
-    branch: "master"
+    branch: "new_batoto_format"
 
-gem 'imgur_ripper', "~> 0.0.2",
+gem 'imgur_ripper', "~> 0.0.3",
     github: 'nelseric/imgur_ripper',
     branch: "master"
 
@@ -69,6 +69,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'spring-commands-sidekiq'
 
   gem 'rubocop', require: false
 end
