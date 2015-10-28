@@ -74,6 +74,7 @@ class Chapter < ActiveRecord::Base
         SevenZipRuby::Writer.open(temp) do |szr|
           szr.method = "LZMA2"
           pages.each do |page|
+            page.image.cache!
             szr.add_file page.image.file.path, as: page.image.file.filename
           end
         end

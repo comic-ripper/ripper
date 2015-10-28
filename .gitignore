@@ -21,7 +21,8 @@
 
 *.sublime-workspace
 
-.env
+/public/assets
+.env*
 /public/uploads
 /public/pages
 /public/chapters
