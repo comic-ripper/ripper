@@ -53,7 +53,7 @@ gem 'simple_form'
 # Comic parsers
 gem 'batoto_ripper', "~> 0.2.0",
     github: 'nelseric/batoto_ripper',
-    branch: "new_batoto_format"
+    branch: "master"
 
 gem 'imgur_ripper', "~> 0.0.3",
     github: 'nelseric/imgur_ripper',
