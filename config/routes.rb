@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   authenticate :user do
     root controller: :comics, action: :index
-
+    get "/check", controller: :static, action: :check
+    
     resources :comics, only: [:index, :new, :show, :create] do
       get 'p/:page', action: :index, on: :collection
     end
