@@ -34,7 +34,7 @@ class Chapter < ActiveRecord::Base
   end
 
   def filename
-    "[#{id}]#{comic.title}_#{number_for_file}"
+    "#{comic.title}_ch#{number_for_file}_[#{id.hash}]"
   end
 
   def complete?
