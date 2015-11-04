@@ -23,7 +23,7 @@
     </tr>
     <%= content_tag_for(:tr, @chapters) do |chapter| %>
       <td><%= chapter.display_name %> </td>
-      <td><%= chapter.parser.translator %> </td>
+      <td><%= chapter.parser.try(:translator) %> </td>
       <td><%= if chapter.complete?
                 fa_icon "check-square-o 2x text-success", text: "Complete"
               else
