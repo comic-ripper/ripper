@@ -1,9 +1,9 @@
 class UnsafeJSON
-  def self.dump obj
+  def self.dump(obj)
     JSON.dump(obj)
   end
 
-  def self.load json
+  def self.load(json)
     JSON.load(json)
   end
 end

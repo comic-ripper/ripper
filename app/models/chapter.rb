@@ -68,55 +68,47 @@ class Chapter < ActiveRecord::Base
     BuilderWorker.perform_async(id)
   end
 
-  ARCHIVE_EXT="zip"
+  ARCHIVE_EXT = "zip"
 
   def build
     build_zip
   end
 
-
   def build_zip
-    if complete?
-      temp = Tempfile.new filename + "." + "zip"
-      begin
-        Zip::File.open(temp.path, Zip::File::CREATE) do |zipfile|
-          pages.each do |page|
-            page.image.cache!
-            zipfile.add page.image.file.filename, page.image.file.path
-          end
+    fail "Chapter not complete" unless complete?
+    temp = Tempfile.new filename + "." + "zip"
+    begin
+      Zip::File.open(temp.path, Zip::File::CREATE) do |zipfile|
+        pages.each do |page|
+          page.image.cache!
+          zipfile.add page.image.file.filename, page.image.file.path
         end
-
-        archive.store! temp
-        save
-      ensure
-        temp.close
-        temp.unlink
       end
-    else
-      fail "Chapter not complete"
+
+      archive.store! temp
+      save
+    ensure
+      temp.close
+      temp.unlink
     end
   end
 
   def build_7z
-    if complete?
-      temp = Tempfile.new filename + "." + "7z"
-      begin
-        SevenZipRuby::Writer.open(temp) do |szr|
-          szr.method = "LZMA2"
-          pages.each do |page|
-            page.image.cache!
-            szr.add_file page.image.file.path, as: page.image.file.filename
-          end
+    temp = Tempfile.new filename + "." + "7z"
+    begin
+      SevenZipRuby::Writer.open(temp) do |szr|
+        szr.method = "LZMA2"
+        pages.each do |page|
+          page.image.cache!
+          szr.add_file page.image.file.path, as: page.image.file.filename
         end
-
-        archive.store! temp
-        save
-      ensure
-        temp.close
-        temp.unlink
       end
-    else
-      fail "Chapter not complete"
+
+      archive.store! temp
+      save
+    ensure
+      temp.close
+      temp.unlink
     end
   end
 end

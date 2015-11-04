@@ -10,7 +10,7 @@ module ParserLibrary
     end
 
     def get_parser(url)
-      parsers.find {|parser| parser.applies? url }
+      parsers.find { |parser| parser.applies? url }
     end
 
     def add(parser)
