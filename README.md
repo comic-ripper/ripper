@@ -1,6 +1,7 @@
 # Ripper
-[![Circle CI](https://circleci.com/gh/nelseric/ripper.svg?style=svg)](https://circleci.com/gh/nelseric/ripper)
+[![Circle CI](https://img.shields.io/circleci/project/nelseric/ripper.svg)](https://circleci.com/gh/nelseric/ripper)
 [![Code Climate](https://codeclimate.com/github/nelseric/ripper/badges/gpa.svg)](https://codeclimate.com/github/nelseric/ripper)
+[![Dependency Status](https://gemnasium.com/nelseric/ripper.svg)](https://gemnasium.com/nelseric/ripper)
 
 ## Installation
  1. git clone git@github.com:nelseric/ripper
