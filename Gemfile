@@ -53,15 +53,15 @@ gem 'simple_form'
 
 # Comic parsers
 gem 'batoto_ripper', "~> 0.2.0",
-    github: 'nelseric/batoto_ripper',
+    github: 'comic-ripper/batoto_ripper',
     branch: "master"
 
 gem 'imgur_ripper', "~> 0.1.0",
-    github: 'nelseric/imgur_ripper',
+    github: 'comic-ripper/imgur_ripper',
     branch: "master"
 
 gem 'manga_eden_ripper', "~> 0.1.0",
-    github: 'nelseric/manga_eden_ripper',
+    github: 'comic-ripper/manga_eden_ripper',
     branch: "master"
 
 gem 'dotenv-rails'

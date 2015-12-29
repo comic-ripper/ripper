@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/nelseric/batoto_ripper.git
+  remote: git://github.com/comic-ripper/batoto_ripper.git
   revision: 110ef755dc29f6afbc733a8507c7bfbc60106cc1
   branch: master
   specs:
@@ -8,7 +8,7 @@ GIT
       nokogiri
 
 GIT
-  remote: git://github.com/nelseric/imgur_ripper.git
+  remote: git://github.com/comic-ripper/imgur_ripper.git
   revision: a74e83d1096ae10644ad04cee4ee6f4f25831101
   branch: master
   specs:
@@ -18,7 +18,7 @@ GIT
       rest-client
 
 GIT
-  remote: git://github.com/nelseric/manga_eden_ripper.git
+  remote: git://github.com/comic-ripper/manga_eden_ripper.git
   revision: 06c97f05a7868a6c21e85dfe41e26d97531758c7
   branch: master
   specs:
@@ -434,4 +434,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
