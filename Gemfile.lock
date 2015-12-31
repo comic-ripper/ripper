@@ -196,8 +196,8 @@ GEM
     ntlm-http (0.1.1)
     oauth (0.4.7)
     orm_adapter (0.5.0)
-    parser (2.2.3.0)
-      ast (>= 1.1, < 3.0)
+    parser (2.3.0.pre.6)
+      ast (~> 2.2)
     pg (0.18.4)
     powerpack (0.1.1)
     pry (0.10.3)
@@ -408,6 +408,7 @@ DEPENDENCIES
   jquery-rails
   kaminari-bootstrap (~> 3.0)
   manga_eden_ripper!
+  parser (~> 2.3.0.pre)
   pg
   psych (~> 2.0.0)
   puma

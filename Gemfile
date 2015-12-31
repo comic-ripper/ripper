@@ -80,6 +80,7 @@ group :development do
   gem 'quiet_assets'
 
   gem 'rubocop', require: false
+  gem 'parser', "~>2.3.0.pre", require: false
 end
 group :development, :test do
   gem 'rspec', '~> 3.3'
