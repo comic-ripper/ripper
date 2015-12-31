@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/nelseric/batoto_ripper.git
-  revision: 110ef755dc29f6afbc733a8507c7bfbc60106cc1
+  remote: git://github.com/comic-ripper/batoto_ripper.git
+  revision: d18ae2fa84d1985b4366514a58e406b9a27c8b6e
   branch: master
   specs:
     batoto_ripper (0.2.0)
@@ -8,8 +8,8 @@ GIT
       nokogiri
 
 GIT
-  remote: git://github.com/nelseric/imgur_ripper.git
-  revision: a74e83d1096ae10644ad04cee4ee6f4f25831101
+  remote: git://github.com/comic-ripper/imgur_ripper.git
+  revision: efb64c984edce2e282020d1dbe73e02a71f7f294
   branch: master
   specs:
     imgur_ripper (0.1.0)
@@ -18,8 +18,8 @@ GIT
       rest-client
 
 GIT
-  remote: git://github.com/nelseric/manga_eden_ripper.git
-  revision: 06c97f05a7868a6c21e85dfe41e26d97531758c7
+  remote: git://github.com/comic-ripper/manga_eden_ripper.git
+  revision: 160f2e95f046ec65239e6c326aeb6830af017a1b
   branch: master
   specs:
     manga_eden_ripper (0.1.0)
@@ -67,19 +67,19 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-    ast (2.1.0)
+    ast (2.2.0)
     astrolabe (1.3.1)
       parser (~> 2.2)
-    autoprefixer-rails (6.1.1)
+    autoprefixer-rails (6.2.3)
       execjs
       json
     awesome_print (1.6.1)
-    aws-sdk (2.2.3)
-      aws-sdk-resources (= 2.2.3)
-    aws-sdk-core (2.2.3)
+    aws-sdk (2.2.8)
+      aws-sdk-resources (= 2.2.8)
+    aws-sdk-core (2.2.8)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.2.3)
-      aws-sdk-core (= 2.2.3)
+    aws-sdk-resources (2.2.8)
+      aws-sdk-core (= 2.2.8)
     bcrypt (3.1.10)
     bootstrap-generators (3.3.4)
       railties (>= 3.1.0)
@@ -100,9 +100,9 @@ GEM
       carrierwave (~> 0.7)
     chronic (0.10.2)
     coderay (1.1.0)
-    coffee-rails (4.1.0)
+    coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.0)
+      railties (>= 4.0.0, < 5.1.x)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -112,7 +112,7 @@ GEM
     connection_pool (2.2.0)
     coolline (0.5.0)
       unicode_utils (~> 1.4)
-    devise (3.5.2)
+    devise (3.5.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -152,8 +152,8 @@ GEM
       pry-coolline (~> 0.2)
       pry-doc (~> 0.6)
       pry-remote (>= 0.1.7)
-    jbuilder (2.3.2)
-      activesupport (>= 3.0.0, < 5)
+    jbuilder (2.4.0)
+      activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     jmespath (1.1.3)
     jquery-rails (4.0.5)
@@ -173,13 +173,13 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mechanize (2.7.3)
+    mechanize (2.7.4)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
-      mime-types (~> 2.0)
+      mime-types (>= 1.17.2, < 3)
       net-http-digest_auth (~> 1.1, >= 1.1.1)
       net-http-persistent (~> 2.5, >= 2.5.2)
-      nokogiri (~> 1.4)
+      nokogiri (~> 1.6)
       ntlm-http (~> 0.1, >= 0.1.1)
       webrobots (>= 0.0.9, < 0.2)
     method_source (0.8.2)
@@ -191,7 +191,7 @@ GEM
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
     netrc (0.11.0)
-    nokogiri (1.6.7)
+    nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     ntlm-http (0.1.1)
     oauth (0.4.7)
@@ -215,7 +215,7 @@ GEM
     pry-remote (0.1.8)
       pry (~> 0.9)
       slop (~> 3.0)
-    psych (2.0.15)
+    psych (2.0.17)
     puma (2.15.3)
     rack (1.6.4)
     rack-pjax (0.8.0)
@@ -270,11 +270,11 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
     rake (10.4.2)
-    rdoc (4.2.0)
+    rdoc (4.2.1)
     redis (3.2.2)
     remotipart (1.2.1)
-    responders (2.1.0)
-      railties (>= 4.2.0, < 5)
+    responders (2.1.1)
+      railties (>= 4.2.0, < 5.1)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
@@ -310,7 +310,7 @@ GEM
     ruby-progressbar (1.7.5)
     rubyzip (1.1.7)
     safe_yaml (1.0.4)
-    sass (3.4.19)
+    sass (3.4.20)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
@@ -328,10 +328,10 @@ GEM
       redis (~> 3.2, >= 3.2.1)
     sidekiq-middleware (0.3.0)
       sidekiq (>= 2.12.4)
-    simple_form (3.2.0)
-      actionpack (~> 4.0)
-      activemodel (~> 4.0)
-    simplecov (0.11.0)
+    simple_form (3.2.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
+    simplecov (0.11.1)
       docile (~> 1.1.0)
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
@@ -350,15 +350,16 @@ GEM
       railties (>= 3.1, < 5.0)
       slim (~> 3.0)
     slop (3.6.0)
-    spring (1.4.4)
+    spring (1.6.1)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
-    sprockets (3.4.1)
+    sprockets (3.5.2)
+      concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (2.3.3)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      sprockets (>= 2.8, < 4.0)
+    sprockets-rails (3.0.0)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
+      sprockets (>= 3.0.0)
     temple (0.7.6)
     thor (0.19.1)
     thread_safe (0.3.5)
@@ -376,7 +377,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.1)
     unicode_utils (1.4.0)
-    warden (1.2.3)
+    warden (1.2.4)
       rack (>= 1.0)
     webrobots (0.1.1)
     whenever (0.9.4)
@@ -388,7 +389,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-import
-  batoto_ripper (~> 0.2.0)!
+  batoto_ripper!
   bootstrap-generators
   bootstrap-sass
   bootswatch-rails
@@ -399,12 +400,12 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
-  imgur_ripper (~> 0.1.0)!
+  imgur_ripper!
   jazz_fingers
   jbuilder (~> 2.0)
   jquery-rails
   kaminari-bootstrap (~> 3.0)
-  manga_eden_ripper (~> 0.1.0)!
+  manga_eden_ripper!
   pg
   psych (~> 2.0.0)
   puma
@@ -432,4 +433,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
