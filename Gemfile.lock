@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/comic-ripper/batoto_ripper.git
-  revision: 110ef755dc29f6afbc733a8507c7bfbc60106cc1
+  revision: d18ae2fa84d1985b4366514a58e406b9a27c8b6e
   branch: master
   specs:
     batoto_ripper (0.2.0)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/comic-ripper/imgur_ripper.git
-  revision: a74e83d1096ae10644ad04cee4ee6f4f25831101
+  revision: efb64c984edce2e282020d1dbe73e02a71f7f294
   branch: master
   specs:
     imgur_ripper (0.1.0)
@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: git://github.com/comic-ripper/manga_eden_ripper.git
-  revision: 06c97f05a7868a6c21e85dfe41e26d97531758c7
+  revision: 160f2e95f046ec65239e6c326aeb6830af017a1b
   branch: master
   specs:
     manga_eden_ripper (0.1.0)
@@ -173,13 +173,13 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mechanize (2.7.3)
+    mechanize (2.7.4)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
-      mime-types (~> 2.0)
+      mime-types (>= 1.17.2, < 3)
       net-http-digest_auth (~> 1.1, >= 1.1.1)
       net-http-persistent (~> 2.5, >= 2.5.2)
-      nokogiri (~> 1.4)
+      nokogiri (~> 1.6)
       ntlm-http (~> 0.1, >= 0.1.1)
       webrobots (>= 0.0.9, < 0.2)
     method_source (0.8.2)
@@ -271,7 +271,6 @@ GEM
     rainbow (2.0.0)
     rake (10.4.2)
     rdoc (4.2.1)
-      json (~> 1.4)
     redis (3.2.2)
     remotipart (1.2.1)
     responders (2.1.1)
@@ -390,7 +389,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-import
-  batoto_ripper (~> 0.2.0)!
+  batoto_ripper!
   bootstrap-generators
   bootstrap-sass
   bootswatch-rails
@@ -401,12 +400,12 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
-  imgur_ripper (~> 0.1.0)!
+  imgur_ripper!
   jazz_fingers
   jbuilder (~> 2.0)
   jquery-rails
   kaminari-bootstrap (~> 3.0)
-  manga_eden_ripper (~> 0.1.0)!
+  manga_eden_ripper!
   pg
   psych (~> 2.0.0)
   puma

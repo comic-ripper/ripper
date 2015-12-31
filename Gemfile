@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.4"
+ruby "2.3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.5'
@@ -52,15 +52,15 @@ gem 'carrierwave-aws'
 gem 'simple_form'
 
 # Comic parsers
-gem 'batoto_ripper', "~> 0.2.0",
+gem 'batoto_ripper',
     github: 'comic-ripper/batoto_ripper',
     branch: "master"
 
-gem 'imgur_ripper', "~> 0.1.0",
+gem 'imgur_ripper',
     github: 'comic-ripper/imgur_ripper',
     branch: "master"
 
-gem 'manga_eden_ripper', "~> 0.1.0",
+gem 'manga_eden_ripper',
     github: 'comic-ripper/manga_eden_ripper',
     branch: "master"
 
