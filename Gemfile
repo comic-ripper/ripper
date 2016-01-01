@@ -82,8 +82,8 @@ group :development do
   gem 'rubocop', require: false
 end
 group :development, :test do
-  gem 'rspec', '~> 3.3.0'
-  gem 'rspec-rails', '~> 3.3.0'
+  gem 'rspec', '~> 3.3'
+  gem 'rspec-rails', '~> 3.3'
   gem 'factory_girl_rails'
 end
 

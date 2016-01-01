@@ -1,5 +1,5 @@
 # Ripper
-[![Circle CI](https://img.shields.io/circleci/project/comic-ripper/ripper.svg)](https://circleci.com/gh/comic-ripper/ripper)
+[![Circle CI](https://circleci.com/gh/comic-ripper/ripper.svg?style=svg&circle-token=2a4361366c8563961a5f86f5812276f6d0cc03a2)](https://circleci.com/gh/comic-ripper/ripper)
 [![Code Climate](https://codeclimate.com/github/comic-ripper/ripper/badges/gpa.svg)](https://codeclimate.com/github/comic-ripper/ripper)
 [![Dependency Status](https://gemnasium.com/comic-ripper/ripper.svg)](https://gemnasium.com/comic-ripper/ripper)
 
