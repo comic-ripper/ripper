@@ -26,9 +26,13 @@ module Checkable
       self.class.perform_async id
     end
 
-    scope :unchecked, -> { where("checked_at IS NULL") }
-    scope :checked, -> { where("checked_at IS NOT NULL") }
-    scope :not_recently_checked, -> { where("checked_at IS NULL OR checked_at < :next_check", next_check: 1.hour.ago) }
+    scope :unchecked, -> { where("#{table_name}.checked_at IS NULL") }
+    scope :checked, -> { where("#{table_name}.checked_at IS NOT NULL") }
+    scope :not_recently_checked, lambda {
+      where(
+        "#{table_name}.checked_at IS NULL OR #{table_name}.checked_at < :next_check",
+        next_check: 1.hour.ago)
+    }
 
     include Sidekiq::Worker
 
