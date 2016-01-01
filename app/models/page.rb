@@ -3,6 +3,10 @@ require 'unsafe_json'
 class Page < ActiveRecord::Base
   include Checkable
 
+  scope :chapter_order, lambda {
+    joins(:chapter).order("chapters.number ASC, pages.number ASC")
+  }
+
   belongs_to :chapter
 
   serialize :parser, UnsafeJSON

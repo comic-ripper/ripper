@@ -217,6 +217,8 @@ GEM
       slop (~> 3.0)
     psych (2.0.17)
     puma (2.15.3)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
@@ -409,6 +411,7 @@ DEPENDENCIES
   pg
   psych (~> 2.0.0)
   puma
+  quiet_assets
   rails (~> 4.2.5)
   rails_12factor
   rails_admin
