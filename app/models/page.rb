@@ -13,6 +13,14 @@ class Page < ActiveRecord::Base
 
   mount_uploader :image, PageImageUploader
 
+  def serialized_page
+    SerializedPage.new(
+      number: number, parser: parser,
+      image: image, file_size: file_size,
+      checked_at: checked_at
+    )
+  end
+
   def file_number
     number.to_s.rjust 6, "0"
   end
