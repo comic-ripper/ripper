@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'unsafe_json'
 require 'zip'
 
@@ -8,8 +9,8 @@ class Chapter < ActiveRecord::Base
   has_many :pages
 
   mount_uploader :archive, ChapterArchiveUploader
-  scope :unbuilt, -> { where("archive IS NULL  ") }
-  scope :built, -> { where("archive IS NOT NULL") }
+  scope :unbuilt, -> { where('archive IS NULL  ') }
+  scope :built, -> { where('archive IS NOT NULL') }
 
   serialize :parser, UnsafeJSON
 
@@ -30,7 +31,7 @@ class Chapter < ActiveRecord::Base
   def number_for_file
     number_part, partial_part = number.match(/(\d+)(.*)/)[1..2]
 
-    number_part.rjust(4, "0") + partial_part.to_s
+    number_part.rjust(4, '0') + partial_part.to_s
   end
 
   def filename
@@ -42,7 +43,7 @@ class Chapter < ActiveRecord::Base
   end
 
   def display_name
-    display = ""
+    display = ''
     display += "Vol.#{volume} " if volume
     display += "Ch.#{number}"
     display + ": #{title}"
@@ -54,13 +55,12 @@ class Chapter < ActiveRecord::Base
 
   on_check def update_pages
     parser.pages.map do |page|
-      unless pages.where(number: page.number).any?
-        Page.create(
-          chapter: self,
-          number: page.number,
-          parser: page
-        )
-      end
+      next if pages.where(number: page.number).any?
+      Page.create(
+        chapter: self,
+        number: page.number,
+        parser: page
+      )
     end
   end
 
@@ -68,15 +68,15 @@ class Chapter < ActiveRecord::Base
     BuilderWorker.perform_async(id)
   end
 
-  ARCHIVE_EXT = "zip"
+  ARCHIVE_EXT = 'zip'.freeze
 
   def build
     build_zip
   end
 
   def build_zip
-    fail "Chapter not complete" unless complete?
-    temp = Tempfile.new filename + "." + "zip"
+    fail 'Chapter not complete' unless complete?
+    temp = Tempfile.new filename + '.' + 'zip'
     begin
       Zip::File.open(temp.path, Zip::File::CREATE) do |zipfile|
         pages.each do |page|
@@ -94,10 +94,10 @@ class Chapter < ActiveRecord::Base
   end
 
   def build_7z
-    temp = Tempfile.new filename + "." + "7z"
+    temp = Tempfile.new filename + '.' + '7z'
     begin
       SevenZipRuby::Writer.open(temp) do |szr|
-        szr.method = "LZMA2"
+        szr.method = 'LZMA2'
         pages.each do |page|
           page.image.cache!
           szr.add_file page.image.file.path, as: page.image.file.filename

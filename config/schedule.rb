@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.minute do
-  runner "ScheduledWorker.perform_async"
+  runner 'ScheduledWorker.perform_async'
 end

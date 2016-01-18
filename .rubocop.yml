@@ -1,9 +1,19 @@
 inherit_from: .rubocop_todo.yml
 
 AllCops:
+  TargetRubyVersion: 2.3
   Exclude:
     - db/schema.rb
     - 'bin/rails'
     - 'bin/rake'
     - 'bin/rspec'
     - 'bin/setup'
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - config/initializers/devise.rb
+
