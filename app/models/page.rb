@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
   include Checkable
 
   scope :chapter_order, lambda {
-    joins(:chapter).order("chapters.number ASC, pages.number ASC")
+    joins(:chapter).order('chapters.number ASC, pages.number ASC')
   }
 
   belongs_to :chapter
@@ -22,7 +22,7 @@ class Page < ActiveRecord::Base
   end
 
   def file_number
-    number.to_s.rjust 6, "0"
+    number.to_s.rjust 6, '0'
   end
 
   on_check def download_image

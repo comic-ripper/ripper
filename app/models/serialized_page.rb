@@ -25,7 +25,7 @@ class SerializedPage
   mount_uploader :image, PageImageUploader
 
   def file_number
-    number.to_s.rjust 6, "0"
+    number.to_s.rjust 6, '0'
   end
 
   on_check def download_image

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.3.0"
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.5'
@@ -54,15 +54,15 @@ gem 'simple_form'
 # Comic parsers
 gem 'batoto_ripper',
     github: 'comic-ripper/batoto_ripper',
-    branch: "master"
+    branch: 'master'
 
 gem 'imgur_ripper',
     github: 'comic-ripper/imgur_ripper',
-    branch: "master"
+    branch: 'master'
 
 gem 'manga_eden_ripper',
     github: 'comic-ripper/manga_eden_ripper',
-    branch: "master"
+    branch: 'master'
 
 gem 'dotenv-rails'
 gem 'jazz_fingers'
@@ -80,7 +80,7 @@ group :development do
   gem 'quiet_assets'
 
   gem 'rubocop', require: false
-  gem 'parser', "~>2.3.0.pre", require: false
+  gem 'parser', '~>2.3.0.pre', require: false
 end
 group :development, :test do
   gem 'rspec', '~> 3.3'
