@@ -51,6 +51,8 @@ gem 'carrierwave-aws'
 
 gem 'simple_form'
 
+gem 'airbrake'
+
 # Comic parsers
 gem 'batoto_ripper',
     github: 'comic-ripper/batoto_ripper',
