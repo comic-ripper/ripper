@@ -1,9 +1,15 @@
 class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show]
 
+
   def show
-    @pages = @chapter.pages.order(:number).page(params[:page]).per(1)
-    render :page
+    respond_to do |format|
+      format.html do
+        @pages = @chapter.pages.order(:number).page(params[:page]).per(1)
+        render :page
+      end
+      format.json { render json:  @chapter, include: :pages }
+    end
   end
 
   private
