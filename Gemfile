@@ -43,7 +43,6 @@ gem 'sinatra', '>= 1.3.0', require: nil # Sidekiq admin
 gem 'whenever', require: false
 
 # Building
-gem 'seven_zip_ruby'
 gem 'rubyzip'
 
 gem 'carrierwave'

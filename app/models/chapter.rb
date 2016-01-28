@@ -92,23 +92,4 @@ class Chapter < ActiveRecord::Base
       temp.unlink
     end
   end
-
-  def build_7z
-    temp = Tempfile.new filename + '.' + '7z'
-    begin
-      SevenZipRuby::Writer.open(temp) do |szr|
-        szr.method = 'LZMA2'
-        pages.each do |page|
-          page.image.cache!
-          szr.add_file page.image.file.path, as: page.image.file.filename
-        end
-      end
-
-      archive.store! temp
-      save
-    ensure
-      temp.close
-      temp.unlink
-    end
-  end
 end
