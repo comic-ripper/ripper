@@ -1,19 +1,24 @@
 class ComicsController < ApplicationController
   before_action :set_comic, only: [:show]
+  
+  respond_to :html, :json
 
   # GET /comics
   # GET /comics.json
   def index
     @comics = Comic.order(:title).page(params[:page]).per(12)
+    respond_with(@comics)
   end
 
   def show
     @chapters = Kaminari.paginate_array(@comic.chapters.sort_by(&:number_for_file)).page(params[:page]).per(12)
+    respond_with(@chapters)
   end
 
   # GET /comics/new
   def new
     @comic = Comic.new
+    respond_with(@comic)
   end
 
   # POST /comics
