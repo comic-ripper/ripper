@@ -1,7 +1,6 @@
 class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show]
 
-
   def show
     respond_to do |format|
       format.html do

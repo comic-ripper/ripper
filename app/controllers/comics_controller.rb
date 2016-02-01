@@ -1,6 +1,6 @@
 class ComicsController < ApplicationController
   before_action :set_comic, only: [:show]
-  
+
   respond_to :html, :json
 
   # GET /comics
@@ -11,8 +11,15 @@ class ComicsController < ApplicationController
   end
 
   def show
-    @chapters = Kaminari.paginate_array(@comic.chapters.sort_by(&:number_for_file)).page(params[:page]).per(12)
-    respond_with(@chapters)
+    respond_to do |format|
+      format.html do
+        @chapters = Kaminari.paginate_array(@comic.chapters.sort_by(&:number_for_file)).page(params[:page]).per(12)
+        respond_with(@chapters)
+      end
+      format.json do
+        respond_with(@comic, include: :chapters)
+      end
+    end
   end
 
   # GET /comics/new
@@ -46,7 +53,7 @@ class ComicsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_comic
-    @comic = Comic.find(params[:id])
+    @comic = Comic.includes(:chapters).find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
