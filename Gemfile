@@ -52,6 +52,8 @@ gem 'simple_form'
 
 gem 'airbrake'
 
+gem 'rack-cors', require: 'rack/cors'
+
 # Comic parsers
 gem 'batoto_ripper',
     github: 'comic-ripper/batoto_ripper',
