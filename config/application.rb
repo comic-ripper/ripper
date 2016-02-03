@@ -29,7 +29,8 @@ module Ripper
                 'comic-ripper.herokuapp.com',
                 'ripper-ng.herokuapp.com',
                 'trmnl.us',
-                'nelseric.github.io'
+                'nelseric.github.io',
+                'ripper.surge.sh'
         resource '*', :headers => :any, :methods => [:get, :put, :post, :delete]
       end
     end
