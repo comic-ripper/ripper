@@ -28,7 +28,8 @@ module Ripper
         origins 'localhost',
                 'comic-ripper.herokuapp.com',
                 'ripper-ng.herokuapp.com',
-                'trmnl.us'
+                'trmnl.us',
+                'nelseric.github.io'
         resource '*', :headers => :any, :methods => [:get, :put, :post, :delete]
       end
     end
