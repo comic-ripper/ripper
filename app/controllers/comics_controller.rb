@@ -6,8 +6,15 @@ class ComicsController < ApplicationController
   # GET /comics
   # GET /comics.json
   def index
-    @comics = Comic.order(:title).page(params[:page]).per(12)
-    respond_with(@comics)
+    respond_to do |format|
+      format.htmnl do
+        @comics = Comic.order(:title).page(params[:page]).per(12)
+        respond_with(@comics)
+      end
+      format.json do
+        respond_with Comic.all
+      end
+    end
   end
 
   def show
