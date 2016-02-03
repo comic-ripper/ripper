@@ -7,7 +7,7 @@ class ComicsController < ApplicationController
   # GET /comics.json
   def index
     respond_to do |format|
-      format.htmnl do
+      format.html do
         @comics = Comic.order(:title).page(params[:page]).per(12)
         respond_with(@comics)
       end
